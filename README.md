@@ -76,6 +76,11 @@ Pyramid: cheap layer-isolated tests for the logic, a small set of UI tests at th
 
 Skipped on purpose: DAO / Room (standard SELECT/INSERT, low risk), `DefaultChatRepository` (tests would re-prove `flow.map`), tight-spacing pixel measurements (mapper unit tests own this), full `ChatRoute` end-to-end (would mostly test Hilt + Compose lifecycle, not our code).
 
+## Branching & Commits
+- Ideally, there should be multiple commits and branches being done over time so that evaluation can be easy as well
+- For this project multiple commits are present to demonstrate knowledge but they have been done over a few hours because of time limitation and personal commitments.
+- All the code has been pushed to master directly. Ideally i would have done it in multiple branches, created PRs, merged small branches into a feature branch and then merged feature branch into master.
+
 ## What I'd do with more time
 
 - **`DayHeaderFormatter` direct unit tests** for each date branch (`Today`/`Yesterday`/`{DayName}`/`d MMM`) — currently only one Instant is exercised transitively via the mapper.
