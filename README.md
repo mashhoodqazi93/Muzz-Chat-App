@@ -119,7 +119,7 @@ Skipped on purpose: DAO / Room (standard SELECT/INSERT, low risk), `DefaultChatR
         │   │   ├── ChatViewModel.kt        @HiltViewModel; combine() over repo + draft + sender
         │   │   ├── components/             ChatTopBar, MessageList, MessageBubble, DayHeader, MessageInputBar
         │   │   ├── mapper/                 MessageListMapper, DayHeaderFormatter
-        │   │   └── state/                  ChatState, ChatIntent, ChatEffect, ChatListItem
+        │   │   └── state/                  ChatState, ChatIntent, ChatListItem
         │   ├── domain/                     Message, User, ChatRepository (interface)
         │   ├── data/                       Room (internal); DefaultChatRepository
         │   └── di/                         DatabaseModule, RepositoryModule, ClockModule
