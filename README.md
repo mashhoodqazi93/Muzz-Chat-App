@@ -92,6 +92,7 @@ Skipped on purpose: DAO / Room (standard SELECT/INSERT, low risk), `DefaultChatR
 - Add toasts or todos/logs on buttons/clickable items which have no implementations. e.g. 3 dots (more)
 - **Configuration change handling for the draft** — currently lives in the VM's `MutableStateFlow`, so it survives recomposition and process death of the host (because VM survives), but explicit `SavedStateHandle` would be cleaner.
 - **Branching & Commits** better branching and commit history as mentioned in the specific section.
+- **Message Fetching Scalability** Would have worked on pagination in case the message list grows over time
 
 ## Limitations
 

@@ -16,16 +16,13 @@ fun ChatRoute(
     val listState = rememberLazyListState()
 
     // State-driven auto-scroll: when a new message lands in state, snap to the bottom.
-    // `state.items` is oldest→newest, so the *last* item's key is what changes on send.
-    // Keying on this (rather than emitting a one-shot effect from the VM on send) avoids
-    // the race where the effect fires before the Room Flow has propagated the new list
-    // through `combine` into Compose.
-    //
-    // The firstVisibleItemIndex guard preserves history-reading: if the user has scrolled
-    // up to look at older messages, an incoming message won't yank them back down.
+    // `state.items` is oldest→newest; the last key changes on every send. Keying the
+    // LaunchedEffect on it (rather than emitting a one-shot effect from the VM on send)
+    // avoids the race where the effect fires before the Room Flow has propagated the
+    // new list through `combine` into Compose.
     val newestKey = state.items.lastOrNull()?.key
     LaunchedEffect(newestKey) {
-        if (newestKey != null && listState.firstVisibleItemIndex <= 1) {
+        if (newestKey != null) {
             listState.animateScrollToItem(0)
         }
     }
